@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+         #
+#    By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/03 17:50:09 by aalliot           #+#    #+#              #
 #    Updated: 2015/02/03 19:39:58 by aalliot          ###   ########.fr        #
@@ -40,13 +40,13 @@ SCUDA	=	$(patsubst %.cu,$(CUDAOBJ)/%.o,$(CSRC))
 NORMINETTE	= ~/project/colorminette/colorminette
 
 FLAGS			= -Wall -Werror -Wextra -iquote header #-framework OpenGL -framework AppKit
-LIB				=  -I /opt/X11/include/
+LIB				= -I /opt/X11/include/
 CUDA			= /Developer/NVIDIA/CUDA-7.0
 NVCC			= /Developer/NVIDIA/CUDA-7.0/bin/nvcc
 NVCC_C			= -ccbin /usr/bin/clang -m64 -Xcompiler -arch -Xcompiler x86_64 -Xcompiler -stdlib=libstdc++
 NVCC_FRAMEWORK	= -Xlinker -framework,OpenGL -Xlinker -framework,AppKit
 NVCC_LIB		= -Xlinker -rpath -Xlinker /Developer/NVIDIA/CUDA-7.0/lib
-NVCC_VCODE		=  -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\"
+NVCC_VCODE		= -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\"
 NVCC_FLAGS		= -Xcompiler -Wextra
 
 $(shell mkdir -p $(OBJDIR) $(CUDAOBJ))

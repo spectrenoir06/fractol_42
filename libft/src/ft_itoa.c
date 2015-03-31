@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/11 14:02:55 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/11 15:32:07 by aalliot          ###   ########.fr       */

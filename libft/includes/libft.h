@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 15:08:04 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/14 15:54:14 by aalliot          ###   ########.fr       */

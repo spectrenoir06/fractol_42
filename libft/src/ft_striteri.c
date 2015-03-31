@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 15:50:05 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/07 13:35:24 by aalliot          ###   ########.fr       */

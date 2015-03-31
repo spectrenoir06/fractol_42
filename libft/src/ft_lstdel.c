@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/14 12:43:53 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/14 13:14:30 by aalliot          ###   ########.fr       */

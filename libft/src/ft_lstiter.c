@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/14 15:45:58 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/14 15:50:54 by aalliot          ###   ########.fr       */

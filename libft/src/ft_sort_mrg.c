@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_merge_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 17:18:41 by aalliot           #+#    #+#             */
 /*   Updated: 2014/12/16 17:18:47 by aalliot          ###   ########.fr       */

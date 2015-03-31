@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_burger.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/02 14:24:10 by aalliot           #+#    #+#             */
 /*   Updated: 2015/01/02 14:24:16 by aalliot          ###   ########.fr       */

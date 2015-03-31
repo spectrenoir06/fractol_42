@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   gpu_frac.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 20:10:19 by aalliot           #+#    #+#             */
 /*   Updated: 2015/02/03 20:10:21 by aalliot          ###   ########.fr       */

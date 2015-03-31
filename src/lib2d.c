@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   lib2d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 20:10:49 by aalliot           #+#    #+#             */
 /*   Updated: 2015/02/03 20:10:56 by aalliot          ###   ########.fr       */

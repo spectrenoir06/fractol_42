@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   cudahead.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 16:08:27 by aalliot           #+#    #+#             */
 /*   Updated: 2015/02/03 16:08:30 by aalliot          ###   ########.fr       */

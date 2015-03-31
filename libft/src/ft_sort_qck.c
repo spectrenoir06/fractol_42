@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_q_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/16 12:17:19 by aalliot           #+#    #+#             */
 /*   Updated: 2014/12/16 20:45:20 by aalliot          ###   ########.fr       */

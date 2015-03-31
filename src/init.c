@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/03 20:10:41 by aalliot           #+#    #+#             */
 /*   Updated: 2015/02/03 20:10:43 by aalliot          ###   ########.fr       */
@@ -15,29 +15,29 @@
 void		cartridge(t_all *all)
 {
 	mlx_string_put(all->env.mlx, all->env.win, (WIN_SZ_X / 2) - 165, 20, \
-	0xF65B0A, "                          FRACTOL                         ");
+	0xFFC700, "                          FRACTOL                         ");
 	mlx_string_put(all->env.mlx, all->env.win, (WIN_SZ_X / 2) - 165, 20, \
-	0x98CD00, "+------------------------         -----------------------+");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 30, 0xF65B0A, all->name);
+	0xFFC700, "+------------------------         -----------------------+");
+	mlx_string_put(all->env.mlx, all->env.win, 10, 30, 0xFFC700, all->name);
 	if (!all->cuda_frac)
-		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xF65B0A,\
+		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xFFC700,\
 			"CUDA Parallel Computing Architecture : OFF");
 	else
-		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xF65B0A,\
+		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xFFC700,\
 			"CUDA Parallel Computing Architecture : ON");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 70, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 70, 0xFFC700,\
 		"Number of iterations =");
-	mlx_string_put(all->env.mlx, all->env.win, 150, 70, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 150, 70, 0xFFC700,\
 		ft_itoa(all->ite_max));
-	mlx_string_put(all->env.mlx, all->env.win, 10, 90, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 90, 0xFFC700,\
 		"Iteration +/- 200: a/d .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 110, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 110, 0xFFC700,\
 		"Navigation : Arrows .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 130, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 130, 0xFFC700,\
 		"Change color rainbow : c .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 150, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 150, 0xFFC700,\
 		"Zoom : Scroll Mouse .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 170, 0xF65B0A,\
+	mlx_string_put(all->env.mlx, all->env.win, 10, 170, 0xFFC700,\
 		"Exit : esc .");
 }
 
@@ -71,7 +71,7 @@ void		all_init(t_all *all)
 	all->img.img = mlx_new_image(all->env.mlx, WIN_SZ_X, WIN_SZ_Y);
 	all->img.data = mlx_get_data_addr(all->img.img, &all->img.bpp,
 	&all->img.sizeline, &all->img.endian);
-	all->img.clrline = 0xF65B0A;
+	all->img.clrline = 0xFFC700;
 	all->zoom = 300;
 	all->off.x = -100;
 	all->off.y = -100;

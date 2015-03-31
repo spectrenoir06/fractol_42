@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsimpledelone.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: adoussau <antoine@doussaud.org>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/16 16:29:12 by aalliot           #+#    #+#             */
 /*   Updated: 2014/11/16 16:30:13 by aalliot          ###   ########.fr       */
