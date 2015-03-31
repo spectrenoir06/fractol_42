@@ -40,7 +40,7 @@ int			main(int argc, char *argv[])
 	while (++i < 128)
 		all->colors[128 + i] = rainbow_cycle(256 - i);
 	frac_init(all, argc, argv);
-	mlx_hook(all->env.win, MotionNotify, PointerMotionMask, mouse_move, all);
+	mlx_hook(all->env.win, 6, (1L << 6), mouse_move, all);
 	mlx_key_hook(all->env.win, key_hook, all);
 	mlx_mouse_hook(all->env.win, mouse_hook, all);
 	mlx_loop_hook(all->env.mlx, loop_hook, all);

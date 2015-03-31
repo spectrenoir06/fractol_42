@@ -17,7 +17,7 @@
 # include "libft.h"
 # include "cudahead.h"
 # include <mlx.h>
-# include <X11/Xlib.h>
+//# include <X11/Xlib.h>
 # include <math.h>
 # include <stdlib.h>
 

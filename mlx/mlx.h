@@ -2,10 +2,10 @@
 ** mlx.h for MinilibX in 
 ** 
 ** Made by Charlie Root
-** Login   <ol@staff.42.fr>
+** Login   <ol@epitech.net>
 ** 
 ** Started on  Mon Jul 31 16:37:50 2000 Charlie Root
-** Last update Tue Oct 01 16:23:28 2014 Olivier Crouzet
+** Last update Tue May 15 16:23:28 2007 Olivier Crouzet
 */
 
 /*
@@ -16,27 +16,14 @@
 /*
 ** FR msg - FR msg - FR msg
 **
-** MacOSX
-** La MinilibX utilise 2 frameworks Mac : OpenGL et AppKit
-**    qu'il faut ajouter a la compilation :
-**   -framework OpenGL -framework AppKit
-**
-** UNIX / Linux
 ** La MinilibX utilise 2 librairies supplementaires qu'il
 **      est necessaire de rajouter a la compilation :
 **   -lmlx -lXext -lX11
 **
 ** La MinilibX permet le chargement des images de type Xpm.
 ** Notez que cette implementation est incomplete.
-**
-** Il y a des differences entre X11 et MacOS.
-** les numeros des touches ne sont pas les memes,
-** les numeros des boutons souris ne sont pas les memes.
-** Egalement l'expose est gere differemment, et sous MacOS
-** il est preferable d'entrer le plus tot possible dans mlx_loop.
-** Sous MacOS, l'octet Alpha est pris en compte dans toutes les
-** images, et represente la transparence et non l'opacite comme
-** c'est normalement le cas.
+** Merci de communiquer tout probleme de chargement d'image
+** de ce type.
 */
 
 

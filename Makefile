@@ -39,31 +39,31 @@ SCUDA	=	$(patsubst %.cu,$(CUDAOBJ)/%.o,$(CSRC))
 
 NORMINETTE	= ~/project/colorminette/colorminette
 
-FLAGS	= -Wall -Werror -Wextra -iquote header -framework OpenGL -framework AppKit
-LIB				= -L/usr/X11/lib -lmlx -lXext -lX11 -I /opt/X11/include/
-CUDA			= /Developer/NVIDIA/CUDA-5.5
-NVCC			= /Developer/NVIDIA/CUDA-5.5/bin/nvcc
+FLAGS			= -Wall -Werror -Wextra -iquote header #-framework OpenGL -framework AppKit
+LIB				=  -I /opt/X11/include/
+CUDA			= /Developer/NVIDIA/CUDA-7.0
+NVCC			= /Developer/NVIDIA/CUDA-7.0/bin/nvcc
 NVCC_C			= -ccbin /usr/bin/clang -m64 -Xcompiler -arch -Xcompiler x86_64 -Xcompiler -stdlib=libstdc++
 NVCC_FRAMEWORK	= -Xlinker -framework,OpenGL -Xlinker -framework,AppKit
-NVCC_LIB		= -Xlinker -rpath -Xlinker /Developer/NVIDIA/CUDA-5.5/lib
-NVCC_VCODE		= -gencode arch=compute_13,code=sm_13 -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\"
-NVCC_FLAGS		= -Xcompiler -Werror -Xcompiler -Wall -Xcompiler -Wextra
+NVCC_LIB		= -Xlinker -rpath -Xlinker /Developer/NVIDIA/CUDA-7.0/lib
+NVCC_VCODE		=  -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\"
+NVCC_FLAGS		= -Xcompiler -Wextra
 
 $(shell mkdir -p $(OBJDIR) $(CUDAOBJ))
 
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ) $(SCUDA)
-	$(NVCC) -O4 $(NVCC_C) $(NVCC_FRAMEWORK) $(NVCC_LIB) -o $(NAME) $(OBJ) $(LIBFT) $(SCUDA) $(LIB)
+	$(NVCC) -O3 $(NVCC_C) $(NVCC_FRAMEWORK) $(NVCC_LIB) -o $(NAME) $(OBJ) $(LIBFT) $(SCUDA) $(LIB) mlx/libmlx_intel-mac.a -L/usr/X11/lib -lX11 -lXext
 
 $(LIBFT):
-	make -C $(LIBDIR)
+	make -C $(LIBDIR) libft.a
 
 $(CUDAOBJ)/%.o: $(CUDASRC)/%.cu
-	$(NVCC) -O4 $(NVCC_C) $(NVCC_VCODE) $(NVCC_FLAGS) -I $(CUDA)/include -I header -I $(CUDAHDR) -o $@ -c $<
+	$(NVCC) -O3 $(NVCC_C) $(NVCC_VCODE) $(NVCC_FLAGS) -I $(CUDA)/include -I header -I $(CUDAHDR) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	gcc -O4 $(FLAGS) $(LIB) -I libft/includes -iquote $(LIBDIR) -iquote $(CUDAHDR) -o $@ -c $<
+	gcc -O3 $(FLAGS) $(LIB) -I libft/includes -iquote $(LIBDIR) -iquote $(CUDAHDR) -o $@ -c $<
 
 .PHONY: clean fclean re norme
 
