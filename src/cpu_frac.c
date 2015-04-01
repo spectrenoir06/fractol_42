@@ -82,25 +82,11 @@ void		color_frac(int i, t_all *all)
 	0xFFE600,
 	0xFFF200,
 	0xFFFF00
-	
 };
-
-	//printf("%x\n",all->ite_max);
 	if (i == all->ite_max)
 		all->img.clrline = 0x000000;
 	else
 		all->img.clrline = tab[i % 64];
-	//printf("%x\n", i);
-	/*if (all->color > 0)
-	{
-		if (i == all->ite_max)
-			all->img.clrline = 0x151515;
-		else
-			all->img.clrline = all->colors[i & 255];
-	}
-	else
-		rainbow_color(((double)i * 4.0) / (double)all->ite_max, all);
-*/
 }
 
 void		frac_calc(t_frac *frac, double c_r, double c_i, int ite_max)
