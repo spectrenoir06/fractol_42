@@ -46,14 +46,10 @@ t_color		ft_int_to_color(int i)
 	return (c);
 }
 
+#include <stdio.h>
+
 void		ft_put_pxl(t_all *all, t_pos *pt)
 {
-	int		i;
-	UINT	color;
-
-	color = all->img.clrline;
-	i = pt->y * all->img.sizeline + pt->x * all->inc;
-	all->img.data[i] = mlx_get_color_value(all->env.mlx, color);
-	all->img.data[i + 1] = mlx_get_color_value(all->env.mlx, color >> 8);
-	all->img.data[i + 2] = mlx_get_color_value(all->env.mlx, color >> 16);
+	*((int *)&all->img.data[(int)(pt->y * all->img.sizeline + pt->x *
+	all->inc)]) = all->img.clrline;
 }
