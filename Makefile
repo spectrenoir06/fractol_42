@@ -34,24 +34,28 @@ SRC		=	main.c			\
 UNAME_S := $(shell uname -s)
 
 ifeq ($(UNAME_S),Linux)
-	NVCC = gcc
 	MLX = mlx/libmlx_Linux.a
 endif
 
 ifeq ($(UNAME_S),Darwin)
+	MLX = mlx/libmlx_INTELQUELQUECHOSE.a
+endif
+
+ifeq ($(CUDA),TRUE)
 	CSRC	=	mandelbrot.cu	\
 				julia.cu		\
 				douady.cu
+	SCUDA			=	$(patsubst %.cu,$(CUDAOBJ)/%.o,$(CSRC))
 
+	CC				= /Developer/NVIDIA/CUDA-7.0/bin/nvcc
 	CUDA			= /Developer/NVIDIA/CUDA-7.0
-	NVCC			= /Developer/NVIDIA/CUDA-7.0/bin/nvcc
 	NVCC_C			= -ccbin /usr/bin/clang -m64 -Xcompiler -arch -Xcompiler x86_64 -Xcompiler -stdlib=libstdc++
 	NVCC_FRAMEWORK	= -Xlinker -framework,OpenGL -Xlinker -framework,AppKit
 	NVCC_LIB		= -Xlinker -rpath -Xlinker /Developer/NVIDIA/CUDA-7.0/lib
 	NVCC_VCODE		= -gencode arch=compute_20,code=sm_20 -gencode arch=compute_30,code=sm_30 -gencode arch=compute_35,code=\"sm_35,compute_35\"
 	NVCC_FLAGS		= -Xcompiler -Wextra
-	SCUDA	=	$(patsubst %.cu,$(CUDAOBJ)/%.o,$(CSRC))
-	MLX =
+else
+	CC = gcc
 endif
 
 
@@ -67,7 +71,7 @@ $(shell mkdir -p $(OBJDIR) $(CUDAOBJ))
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ) $(SCUDA)
-	$(NVCC) -O3 $(NVCC_C) $(NVCC_FRAMEWORK) $(NVCC_LIB) -o $(NAME) $(OBJ) $(LIBFT) $(SCUDA) $(LIB) $(MLX) -L/usr/X11/lib -lX11 -lXext
+	$(CC) -O3 $(NVCC_C) $(NVCC_FRAMEWORK) $(NVCC_LIB) -o $(NAME) $(OBJ) $(LIBFT) $(SCUDA) $(LIB) $(MLX) -L/usr/X11/lib -lX11 -lXext
 
 $(LIBFT):
 	make -C $(LIBDIR) libft.a
