@@ -10,17 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 #include "fractol.h"
-
 
 void		color_frac(int i, t_all *all)
 {
 	if (i == all->ite_max)
 		all->img.clrline = 0x000000;
 	else
-		all->img.clrline = all->pallette[i % all->pallette_nb];
+		all->img.clrline = all->pallette[i % NB_COLOR];
 }
 
 void		frac_calc(t_frac *frac, double c_r, double c_i, int ite_max)

@@ -46,8 +46,6 @@ t_color		ft_int_to_color(int i)
 	return (c);
 }
 
-#include <stdio.h>
-
 void		ft_put_pxl(t_all *all, t_pos *pt)
 {
 	*((int *)&all->img.data[(int)(pt->y * all->img.sizeline + pt->x *

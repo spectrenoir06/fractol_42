@@ -60,27 +60,25 @@ void		choose_frac(t_all *all)
 	}
 }
 
-
-void GiveRainbowColor(double position,unsigned char c[])
+int			color(double position)
 {
-  /* if position > 1 then we have repetition of colors it maybe useful    */
+	unsigned char	t;
+	int				n;
+	double			m;
+	int				*ret;
+	unsigned char	c[4];
 
-	if (position>1.0)
+	ret = (int *)c;
+	if (position > 1.0)
 	{
-		if (position-(int)position==0.0)
-			position=1.0;
+		if (position - (int)position == 0.0)
+			position = 1.0;
 		else
-			position=position-(int)position;
+			position = position - (int)position;
 	}
-
-	unsigned char nmax=6; /* number of color segments */
-	double m=nmax* position;
-
-	int n=(int)m; // integer of m
-
-	double f=m-n;  // fraction of m
-	unsigned char t=(int)(f*255);
-
+	m = 6 * position;
+	n = (int)m;
+	t = (int)(((double)(m - n)) * 255);
 	if (n == 0)
 	{
 		c[0] = 255;
@@ -123,12 +121,13 @@ void GiveRainbowColor(double position,unsigned char c[])
 		c[1] = 0;
 		c[2] = 0;
 	}
+	return (*ret);
 }
-
-#include <stdio.h>
 
 void		all_init(t_all *all)
 {
+	int				i;
+
 	if (!(all->env.mlx = mlx_init()))
 	{
 		ft_putendl_fd("You won't fuck me like that!!", 2);
@@ -148,20 +147,9 @@ void		all_init(t_all *all)
 	all->filter = -1;
 	all->color = 1;
 	all->inc = all->img.bpp / 8;
-
-	int dl = 0;
-	unsigned int c;
-	all->pallette_nb = NB_COLOR;
-	all->pallette = malloc(sizeof(int) * all->pallette_nb);
-	for (dl = 0; dl <= all->pallette_nb; dl++)
-	{
-		GiveRainbowColor(dl / (double)all->pallette_nb, (unsigned char *)&c);
-		//printf("%x\n", c);
-		all->pallette[dl] = c;
-	}
-
-
-
+	i = 0;
+	while (i++ <= NB_COLOR)
+		all->pallette[i - 1] = color((i - 1) / (double)NB_COLOR);
 }
 
 void		frac_init(t_all *all, int argc, char *argv[])
