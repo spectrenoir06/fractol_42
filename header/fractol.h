@@ -109,19 +109,6 @@ typedef struct		s_all
 	int				pallette[NB_COLOR];
 }					t_all;
 
-# ifdef __APPLE__
-#  define CALL_MANDELBROT call_mandelbrot(all->tab, all->off.x, all->off.y, \
-all->zoom, all->ite_max, WIN_SZ_X, WIN_SZ_Y)
-#  define CALL_JULIA call_julia(all->tab, all->off.x, all->off.y, all->zoom,\
-all->ite_max, WIN_SZ_X, WIN_SZ_Y, all->c_i, all->c_r)
-#  define CALL_DOUADY call_douady(all->tab, all->off.x, all->off.y, all->zoom,\
-all->ite_max, WIN_SZ_X, WIN_SZ_Y)
-# elif __linux
-#  define CALL_MANDELBROT
-#  define CALL_JULIA
-#  define CALL_DOUADY
-# endif
-
 t_color				ft_rgb_to_color(UCHAR r, UCHAR g, UCHAR b);
 int					ft_color_to_int(t_color color);
 t_color				ft_int_to_color(int i);
