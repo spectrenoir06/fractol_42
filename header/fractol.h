@@ -20,8 +20,8 @@
 # include <math.h>
 # include <stdlib.h>
 
-# define WIN_SZ_X 1024
-# define WIN_SZ_Y 1024
+# define WIN_SZ_X 1000
+# define WIN_SZ_Y 1000
 # define ZOOM 1.01
 # define UINT unsigned int
 # define UCHAR unsigned char
