@@ -63,12 +63,7 @@ void		choose_frac(t_all *all)
 int			color(double position)
 {
 	unsigned char	t;
-	int				n;
-	double			m;
-	int				*ret;
-	unsigned char	c[4];
 
-	ret = (int *)c;
 	if (position > 1.0)
 	{
 		if (position - (int)position == 0.0)
@@ -76,52 +71,21 @@ int			color(double position)
 		else
 			position = position - (int)position;
 	}
-	m = 6 * position;
-	n = (int)m;
-	t = (int)(((double)(m - n)) * 255);
-	if (n == 0)
-	{
-		c[0] = 255;
-		c[1] = t;
-		c[2] = 0;
-	}
-	else if (n == 1)
-	{
-		c[0] = 255 - t;
-		c[1] = 255;
-		c[2] = 0;
-	}
-	else if (n == 2)
-	{
-		c[0] = 0;
-		c[1] = 255;
-		c[2] = t;
-	}
-	else if (n == 3)
-	{
-		c[0] = 0;
-		c[1] = 255 - t;
-		c[2] = 255;
-	}
-	else if (n == 4)
-	{
-		c[0] = t;
-		c[1] = 0;
-		c[2] = 255;
-	}
-	else if (n == 5)
-	{
-		c[0] = 255;
-		c[1] = 0;
-		c[2] = 255 - t;
-	}
+	t = (int)(((double)((6 * position) - (int)(6 * position))) * 255);
+	if ((int)(6 * position) == 0)
+		return ((t << 8) | t);
+	else if ((int)(6 * position) == 1)
+		return (0xFF00 | (0xFF - t));
+	else if ((int)(6 * position) == 2)
+		return ((t << 16) | 0xFF00);
+	else if ((int)(6 * position) == 3)
+		return (((0xFF - t) << 8) | 0xFF0000);
+	else if ((int)(6 * position) == 4)
+		return (0xFF0000 | t);
+	else if ((int)(6 * position) == 5)
+		return (((255 - t) << 16) | 0xFF);
 	else
-	{
-		c[0] = 255;
-		c[1] = 0;
-		c[2] = 0;
-	}
-	return (*ret);
+		return (0xFF);
 }
 
 void		all_init(t_all *all)
