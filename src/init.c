@@ -64,16 +64,9 @@ int			color(double position)
 {
 	unsigned char	t;
 
-	if (position > 1.0)
-	{
-		if (position - (int)position == 0.0)
-			position = 1.0;
-		else
-			position = position - (int)position;
-	}
 	t = (int)(((double)((6 * position) - (int)(6 * position))) * 255);
 	if ((int)(6 * position) == 0)
-		return ((t << 8) | t);
+		return ((t << 8) | 0xFF);
 	else if ((int)(6 * position) == 1)
 		return (0xFF00 | (0xFF - t));
 	else if ((int)(6 * position) == 2)

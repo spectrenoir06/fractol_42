@@ -26,7 +26,7 @@
 # define UINT unsigned int
 # define UCHAR unsigned char
 
-# define NB_COLOR 255
+# define NB_COLOR 80
 
 typedef struct		s_pwr
 {
@@ -144,5 +144,6 @@ void				ft_usage(void);
 void				frac_init(t_all *all, int argc, char *argv[]);
 void				exit_prog(t_all *all);
 int					mouse_move(int x, int y, t_all *all);
+int					color(double position);
 
 #endif
