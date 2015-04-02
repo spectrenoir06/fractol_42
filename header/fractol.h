@@ -27,6 +27,8 @@
 # define UINT unsigned int
 # define UCHAR unsigned char
 
+# define NB_COLOR 100
+
 typedef struct		s_pwr
 {
 	float	t2;
