@@ -38,10 +38,10 @@ ifeq ($(UNAME_S),Linux)
 endif
 
 ifeq ($(UNAME_S),Darwin)
-	MLX = mlx/libmlx_INTELQUELQUECHOSE.a
+	MLX = mlx/libmlx_intel-mac.a
 endif
 
-ifeq ($(CUDA),TRUE)
+ifeq ($(UNAME_S),Darwin)
 	CSRC	=	mandelbrot.cu	\
 				julia.cu		\
 				douady.cu
@@ -77,6 +77,7 @@ $(LIBFT):
 	make -C $(LIBDIR) libft.a
 
 $(CUDAOBJ)/%.o: $(CUDASRC)/%.cu
+	$(CC) -O3 $(NVCC_C) $(NVCC_VCODE) $(NVCC_FLAGS) -I $(CUDA)/include -I header -I $(CUDAHDR) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	gcc -O3 $(FLAGS) $(LIB) -I libft/includes -iquote $(LIBDIR) -iquote $(CUDAHDR) -o $@ -c $<

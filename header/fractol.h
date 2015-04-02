@@ -105,6 +105,8 @@ typedef struct		s_all
 	int				inc;
 	int				color;
 	int				tab[WIN_SZ_X * WIN_SZ_Y * sizeof(int)];
+	int				*pallette;
+	int				pallette_nb;
 }					t_all;
 
 # ifdef __APPLE__
