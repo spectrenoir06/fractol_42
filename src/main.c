@@ -30,15 +30,9 @@ void		ft_usage(void)
 int			main(int argc, char *argv[])
 {
 	t_all		*all;
-	int			i;
 
 	all = ft_malloc(sizeof(t_all));
-	i = -1;
-	while (++i < 128)
-		all->colors[i] = rainbow_cycle(i);
-	i = -1;
-	while (++i < 128)
-		all->colors[128 + i] = rainbow_cycle(256 - i);
+
 	frac_init(all, argc, argv);
 	mlx_hook(all->env.win, 6, (1L << 6), mouse_move, all);
 	mlx_key_hook(all->env.win, key_hook, all);

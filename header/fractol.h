@@ -102,7 +102,6 @@ typedef struct		s_all
 	int				filter;
 	int				cuda_frac;
 	char			name[50];
-	UINT			colors[256];
 	int				inc;
 	int				color;
 	int				tab[WIN_SZ_X * WIN_SZ_Y * sizeof(int)];
