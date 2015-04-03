@@ -14,31 +14,42 @@
 
 void		cartridge(t_all *all)
 {
-	mlx_string_put(all->env.mlx, all->env.win, (WIN_SZ_X / 2) - 165, 20, \
-	0xFFC700, "                          FRACTOL                         ");
-	mlx_string_put(all->env.mlx, all->env.win, (WIN_SZ_X / 2) - 165, 20, \
-	0xFFC700, "+------------------------         -----------------------+");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 30, 0xFFC700, all->name);
-	if (!all->cuda_frac)
-		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xFFC700,\
-			"CUDA Parallel Computing Architecture : OFF");
-	else
-		mlx_string_put(all->env.mlx, all->env.win, 10, 50, 0xFFC700,\
-			"CUDA Parallel Computing Architecture : ON");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 70, 0xFFC700,\
-		"Number of iterations =");
-	mlx_string_put(all->env.mlx, all->env.win, 150, 70, 0xFFC700,\
+	/*
+	int x = 0;
+	int y = 0;
+
+	while (x < WIN_SZ_X)
+	{
+		y = 0;
+		while (y <= 65)
+		{
+			mlx_pixel_put(all->env.mlx, all->env.win, x, y, 0);
+			y++;
+		}
+		x++;
+	}*/
+
+	mlx_string_put(all->env.mlx, all->env.win, 10, 15, 0xFFC700, "Fractal:");
+	mlx_string_put(all->env.mlx, all->env.win, 90, 15, 0xFFC700, all->name);
+	mlx_string_put(all->env.mlx, all->env.win, 10, 30, 0xFFC700, "CUDA:");
+	mlx_string_put(all->env.mlx, all->env.win, 90, 30, (all->cuda_frac ? 0x00FF00 : 0XFF0000), (all->cuda_frac ? "ON" : "OFF"));
+	mlx_string_put(all->env.mlx, all->env.win, 10, 45, 0xFFC700, "Iterations:");
+	mlx_string_put(all->env.mlx, all->env.win, 90, 45, 0xFFC700,
 		ft_itoa(all->ite_max));
-	mlx_string_put(all->env.mlx, all->env.win, 10, 90, 0xFFC700,\
-		"Iteration +/- 200: a/d .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 110, 0xFFC700,\
-		"Navigation : Arrows .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 130, 0xFFC700,\
-		"Change color rainbow : c .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 150, 0xFFC700,\
-		"Zoom : Scroll Mouse .");
-	mlx_string_put(all->env.mlx, all->env.win, 10, 170, 0xFFC700,\
-		"Exit : esc .");
+	mlx_string_put(all->env.mlx, all->env.win, 10, 60, 0xFFC700,
+		"Zoom:");
+	mlx_string_put(all->env.mlx, all->env.win, 90, 60, 0xFFC700,
+		ft_itoa((int)all->zoom / 3));
+	mlx_string_put(all->env.mlx, all->env.win, 110, 60, 0xFFC700,
+		"%");
+	mlx_string_put(all->env.mlx, all->env.win, 500, 15, 0xFFC700,
+		"Iteration +/- : A/D");
+	mlx_string_put(all->env.mlx, all->env.win, 500, 30, 0xFFC700,
+		"Navigation    : Arrows");
+	mlx_string_put(all->env.mlx, all->env.win, 500, 45, 0xFFC700,
+		"Zoom          : Scroll Mouse");
+	mlx_string_put(all->env.mlx, all->env.win, 500, 60, 0xFFC700,
+		"Exit          : ESC");
 }
 
 void		choose_frac(t_all *all)
@@ -46,17 +57,17 @@ void		choose_frac(t_all *all)
 	if (all->frac_no == 1)
 	{
 		!all->cuda_frac ? frac_mandelbrot(all) : cuda_mandelbrot(all);
-		ft_strcpy(all->name, "Fractal name: Mandelbrot");
+		ft_strcpy(all->name, "Mandelbrot");
 	}
 	else if (all->frac_no == 2)
 	{
 		!all->cuda_frac ? frac_julia(all) : cuda_julia(all);
-		ft_strcpy(all->name, "Fractal name: Julia");
+		ft_strcpy(all->name, "Julia");
 	}
 	else if (all->frac_no == 3)
 	{
 		!all->cuda_frac ? frac_douady(all) : cuda_douady(all);
-		ft_strcpy(all->name, "Fractal name: Douady Rabbit");
+		ft_strcpy(all->name, "Douady Rabbit");
 	}
 }
 
@@ -87,7 +98,7 @@ void		all_init(t_all *all)
 
 	if (!(all->env.mlx = mlx_init()))
 	{
-		ft_putendl_fd("You won't fuck me like that!!", 2);
+		ft_putendl_fd("Can't display (No X server)", 2);
 		exit(2);
 	}
 	all->env.win = mlx_new_window(all->env.mlx, WIN_SZ_X, WIN_SZ_Y, "Fractol");
@@ -97,7 +108,7 @@ void		all_init(t_all *all)
 	all->img.clrline = 0xFFC700;
 	all->zoom = 300;
 	all->off.x = -100;
-	all->off.y = -100;
+	all->off.y = -200;
 	all->ite_max = 200;
 	all->re = 1;
 	all->f = 1;

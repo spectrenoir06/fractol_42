@@ -78,7 +78,7 @@ int			mouse_hook(int button, int x, int y, t_all *all)
 	{
 		all->zoom *= ZOOM;
 		all->off.x = (all->off.x + ((WIN_SZ_X - (WIN_SZ_X / ZOOM)) / 2) +
-		(x - WIN_SZ_X / 2) * (1 - (1 / ZOOM))) * ZOOM;
+		((x) - WIN_SZ_X / 2) * (1 - (1 / ZOOM))) * ZOOM;
 		all->off.y = (all->off.y + ((WIN_SZ_Y - (WIN_SZ_Y / ZOOM)) / 2) +
 		(y - WIN_SZ_Y / 2) * (1 - (1 / ZOOM))) * ZOOM;
 		all->re = 1;

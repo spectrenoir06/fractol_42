@@ -104,7 +104,7 @@ norme:
 	@$(NORMINETTE) $(SRCDIR)/ $(HDRDIR)/
 
 clean:
-	rm -f $(OBJ) $(SCUDA)
+	rm -f $(OBJ_STATIC) $(OBJ_DEBUG) $(SCUDA)
 	make -C libft/ clean
 
 fclean: clean

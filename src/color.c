@@ -12,34 +12,6 @@
 
 #include "fractol.h"
 
-void		rainbow_color(double pos, t_all *all)
-{
-	t_rbow	rbow;
-
-	if (pos > 1.0)
-		pos = (pos - (int)pos) == 0.0 ? 1.0 : (pos - (int)pos);
-	rbow.nmax = 6;
-	rbow.m = rbow.nmax * pos;
-	rbow.n = (int)rbow.m;
-	rbow.f = rbow.m - rbow.n;
-	rbow.t = (int)(rbow.f * 255);
-	if (rbow.n == 0)
-		rbow.c = ft_rgb_to_color(0, rbow.t, 0);
-	else if (rbow.n == 1)
-		rbow.c = ft_rgb_to_color(255 - rbow.t, 255, 0);
-	else if (rbow.n == 2)
-		rbow.c = ft_rgb_to_color(0, 255, rbow.t);
-	else if (rbow.n == 3)
-		rbow.c = ft_rgb_to_color(0, 255 - rbow.t, 255);
-	else if (rbow.n == 4)
-		rbow.c = ft_rgb_to_color(rbow.t, 0, 255);
-	else if (rbow.n == 5)
-		rbow.c = ft_rgb_to_color(255, 0, 255 - rbow.t);
-	else
-		rbow.c = ft_rgb_to_color(0, 0, 0);
-	all->img.clrline = ft_color_to_int(rbow.c);
-}
-
 void		color_fill(int t, t_color *color, t_pwr p)
 {
 	if (0 <= t && t < 60)

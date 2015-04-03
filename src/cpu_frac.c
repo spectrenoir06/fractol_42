@@ -43,7 +43,7 @@ void		frac_mandelbrot(t_all *all)
 	frac.y1 = -1.2;
 	while (frac.pt.x < WIN_SZ_X)
 	{
-		frac.pt.y = 0;
+		frac.pt.y = MENU_MAX_Y;
 		frac.c_r = ((frac.pt.x + all->off.x) / all->zoom) + frac.x1;
 		frac.c_i = ((frac.pt.y + all->off.y) / all->zoom) + frac.y1;
 		while (frac.pt.y < WIN_SZ_Y)
@@ -70,7 +70,7 @@ void		frac_julia(t_all *all)
 	frac.pt.x = 0;
 	while (frac.pt.x < WIN_SZ_X)
 	{
-		frac.pt.y = 0;
+		frac.pt.y = MENU_MAX_Y;
 		while (frac.pt.y < WIN_SZ_Y)
 		{
 			frac.z_r = (frac.pt.x + all->off.x) / all->zoom + frac.x1;
@@ -96,7 +96,7 @@ void		frac_douady(t_all *all)
 	frac.pt.x = 0;
 	while (frac.pt.x < WIN_SZ_X)
 	{
-		frac.pt.y = 0;
+		frac.pt.y = MENU_MAX_Y;
 		while (frac.pt.y < WIN_SZ_Y)
 		{
 			frac.z_r = (frac.pt.x + all->off.x) / all->zoom + frac.x1;

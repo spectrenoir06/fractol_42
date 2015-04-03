@@ -22,6 +22,9 @@
 
 # define WIN_SZ_X 1000
 # define WIN_SZ_Y 1000
+# define MENU_MAX_Y 65
+# define FRACT_SZ_X 1000
+# define FRACT_SZ_Y 1000 - MENU_MAX_Y
 # define ZOOM 1.01
 # define UINT unsigned int
 # define UCHAR unsigned char
