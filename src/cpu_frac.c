@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fractol.h"
-/*#include "math.h"
 
 void		color_frac(int i, t_all *all)
 {
@@ -34,7 +33,6 @@ void		frac_calc(t_frac *frac, double c_r, double c_i, int ite_max)
 		frac->i++;
 	}
 }
-
 
 void		frac_mandelbrot(t_all *all)
 {
@@ -112,43 +110,3 @@ void		frac_douady(t_all *all)
 		frac.pt.x++;
 	}
 }
-
-/*
-void		frac_calc2(t_frac *frac, double c_r, double c_i, int ite_max)
-{
-	float temp = 0;
-	while (sqrt(frac->z_r * frac->z_r + frac->z_i * frac->z_i) < 1 && frac->i < ite_max)
-	{
-		temp = frac->z_r;
-		frac->z_r = sqrt((frac->z_r * frac->z_r - frac->z_i * frac->z_i) * (frac->z_r * frac->z_r - frac->z_i * frac->z_i)) + frac->c_r;
-		frac->z_i = sqrt((2 * frac->z_i * temp)*(2 * frac->z_i * temp)) + frac->c_i;
-		frac->i++;
-	}
-}
-
-void		frac_glynn(t_all *all)
-{
-	t_frac	frac;
-
-	frac.x1 = -1.4;
-	frac.y1 = -1.2;
-	frac.c_r = -0.375;
-	frac.c_i = 0;
-	frac.pt.x = 0;
-	while (frac.pt.x < WIN_SZ_X)
-	{
-		frac.pt.y = MENU_MAX_Y;
-		while (frac.pt.y < WIN_SZ_Y)
-		{
-			frac.z_r = (frac.pt.x + all->off.x) / all->zoom + frac.x1;
-			frac.z_i = (frac.pt.y + all->off.y) / all->zoom + frac.y1;
-			frac.i = 0;
-			frac_calc2(&frac, frac.c_r, frac.c_i, 10);
-			color_frac(frac.i, all);
-			ft_put_pxl(all, &frac.pt);
-			frac.pt.y++;
-		}
-		frac.pt.x++;
-	}
-}
-*/

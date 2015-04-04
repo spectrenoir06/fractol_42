@@ -14,34 +14,14 @@
 
 void		cartridge(t_all *all)
 {
-	/*
-	int x = 0;
-	int y = 0;
-
-	while (x < WIN_SZ_X)
-	{
-		y = 0;
-		while (y <= 65)
-		{
-			mlx_pixel_put(all->env.mlx, all->env.win, x, y, 0);
-			y++;
-		}
-		x++;
-	}*/
-
 	mlx_string_put(all->env.mlx, all->env.win, 10, 15, 0xFFC700, "Fractal:");
 	mlx_string_put(all->env.mlx, all->env.win, 90, 15, 0xFFC700, all->name);
 	mlx_string_put(all->env.mlx, all->env.win, 10, 30, 0xFFC700, "CUDA:");
-	mlx_string_put(all->env.mlx, all->env.win, 90, 30, (all->cuda_frac ? 0x00FF00 : 0XFF0000), (all->cuda_frac ? "ON" : "OFF"));
+	mlx_string_put(all->env.mlx, all->env.win, 90, 30,
+	(all->cuda_frac ? 0x00FF00 : 0XFF0000), (all->cuda_frac ? "ON" : "OFF"));
 	mlx_string_put(all->env.mlx, all->env.win, 10, 45, 0xFFC700, "Iterations:");
 	mlx_string_put(all->env.mlx, all->env.win, 90, 45, 0xFFC700,
 		ft_itoa(all->ite_max));
-	mlx_string_put(all->env.mlx, all->env.win, 10, 60, 0xFFC700,
-		"Zoom:");
-	mlx_string_put(all->env.mlx, all->env.win, 90, 60, 0xFFC700,
-		ft_itoa((int)all->zoom / 3));
-	mlx_string_put(all->env.mlx, all->env.win, 110, 60, 0xFFC700,
-		"%");
 	mlx_string_put(all->env.mlx, all->env.win, 500, 15, 0xFFC700,
 		"Iteration +/- : A/D");
 	mlx_string_put(all->env.mlx, all->env.win, 500, 30, 0xFFC700,

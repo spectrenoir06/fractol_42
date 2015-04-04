@@ -32,7 +32,6 @@ int			main(int argc, char *argv[])
 	t_all		*all;
 
 	all = ft_malloc(sizeof(t_all));
-
 	frac_init(all, argc, argv);
 	mlx_hook(all->env.win, 6, (1L << 6), mouse_move, all);
 	mlx_key_hook(all->env.win, key_hook, all);

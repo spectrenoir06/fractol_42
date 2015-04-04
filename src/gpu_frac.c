@@ -19,7 +19,7 @@ void		cuda_mandelbrot(t_all *all)
 
 	o = 0;
 	CALL_MANDELBROT;
-	pt.y = 0;
+	pt.y = MENU_MAX_Y;
 	while (pt.y < WIN_SZ_Y)
 	{
 		pt.x = 0;
@@ -42,7 +42,7 @@ void		cuda_julia(t_all *all)
 	int			o;
 
 	CALL_JULIA;
-	pt.y = 0;
+	pt.y = MENU_MAX_Y;
 	o = 0;
 	while (pt.y < WIN_SZ_Y)
 	{
@@ -67,7 +67,7 @@ void		cuda_douady(t_all *all)
 
 	o = 0;
 	CALL_DOUADY;
-	pt.y = 0;
+	pt.y = MENU_MAX_Y;
 	while (pt.y < WIN_SZ_Y)
 	{
 		pt.x = 0;
