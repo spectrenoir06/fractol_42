@@ -68,7 +68,7 @@ OBJ_DEBUG		=	$(patsubst %.c,$(DEBUG_OBJDIR)/%.o,$(SRC))
 NORMINETTE	= ~/project/colorminette/colorminette
 
 FLAGS			= #-Wall -Werror #-Wextra -iquote header #-framework OpenGL -framework AppKit
-LIB				= -I /opt/X11/include/
+LIB				= -I /opt/X11/include/ -I mlx
 
 $(shell mkdir -p $(STATIC_OBJDIR) $(CUDAOBJ) $(DEBUG_OBJDIR))
 
